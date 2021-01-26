@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 26, 2020 7:55:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Produk" table="produk" catalog="gudangbuku" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="judul" type="string">
+            <column name="judul" length="200" not-null="true" />
+        </property>
+        <property name="penggarang" type="string">
+            <column name="penggarang" length="50" not-null="true" />
+        </property>
+        <property name="penerbit" type="string">
+            <column name="penerbit" length="200" not-null="true" />
+        </property>
+        <property name="kategori" type="string">
+            <column name="kategori" length="12" not-null="true" />
+        </property>
+        <property name="stock" type="int">
+            <column name="stock" not-null="true" />
+        </property>
+        <property name="received" type="int">
+            <column name="received" not-null="true" />
+        </property>
+        <property name="shipped" type="int">
+            <column name="shipped" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Product Edit</title>
+    </h:head>
+    <style>
+        body {
+	margin:0;
+	padding:0;
+	background-color:whitesmoke;
+	font-family:'Tahoma';
+}
+.sidenav {
+	height:100%;
+	width:160px;
+	position:fixed;
+	z-index:1;
+	top:0;
+	left:0;
+	background-color:#554CCD;
+	overflow-x:hidden;
+	padding-top:20px;
+}
+.sidelink {
+	padding:6px 8px 6px 16px;
+	text-decoration:none;
+	font-size:25px;
+	color:plum;
+	display:block;
+}
+.sidenav a:hover {
+	color: bisque;
+}
+.main {
+	margin-top:25px;
+	margin-left:160px;
+	/* Same as the width of the sidenav */
+	font-size:15px;
+	/* Increased text to enable scrolling */
+	padding:0px 10px;
+}
+@media screen and (max-height:450px) {
+	.sidenav {
+		padding-top:15px;
+	}
+	.sidenav a {
+		font-size:18px;
+	}
+}
+.topnav {
+	margin-left:160px;
+	overflow:hidden;
+	background-color:cyan;
+}
+.topnav a {
+	float:left;
+	color:purple;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+	font-size:17px;
+}
+.topnav a:hover {
+	background-color:cyan;
+	color:#f1f1f1;
+}
+.topnav a.active {
+	background-color:cyan;
+	color:#f1f1f1;
+}
+.tables {
+        margin-left: 120px;
+	font-family:arial,sans-serif;
+	border-collapse:collapse;
+	width:80%;
+}
+.tc,.thead {
+	border:1px solid #dddddd;
+	text-align:left;
+	padding: 8px;
+}
+h2{  
+    text-align: center;  
+    color: #6A6262;  
+    padding: 20px;  
+} 
+    
+    </style>    
+    <h:body>
+        
+        
+        <div class="topnav">
+        <h:form>
+            <h:commandLink class="active" value="ProduK Data" action="#{produk.home()}"/>
+        </h:form>
+        </div>
+        
+        <div class="main">
+        <h2>Produk CRUD Buku</h2>
+        <h:form>
+        <h:inputText class="inputText" value="#{produk.id}" a:placeholder="ID"/><br/>
+        <h:commandButton class="but" value="Search" action="#{produk.getById()}"/>
+        <hr/>
+        <h:outputText value="Judul"/><br/>
+        <h:inputText class="inputText" value="#{produk.judul}" a:placeholder="Judul"/><br/><br/>
+        <h:outputText value="Penggarang"/><br/>
+        <h:inputText class="inputText" value="#{produk.penggarang}" a:placeholder="Penggarang"/><br/><br/>
+        <h:outputText value="Penerbit"/><br/>
+        <h:inputText class="inputText" value="#{produk.penerbit}" a:placeholder="Penerbit"/><br/><br/>
+        <h:outputText value="Kategori"/><br/>
+        <h:selectOneListbox class="inputText" size="4" a:placeholder="Kategori" value="#{produk.kategori}">
+                    <f:selectItem itemLabel="Dongeng" itemValue="Dongeng"/>
+                    <f:selectItem itemLabel="Novel" itemValue="Novel"/>
+                    <f:selectItem itemLabel="Ensiklopedia" itemValue="Ensiklopedia"/>
+                    <f:selectItem itemLabel="Tafsir" itemValue="Tafsir"/>
+        </h:selectOneListbox><br/><br/>
+        <h:outputText value="Stock"/><br/>
+        <h:inputText class="inputText" value="#{produk.stock}"/><br/><br/>
+        <h:outputText value="Received"/><br/>
+        <h:inputText class="inputText" value="#{produk.received}"/><br/><br/>
+        <h:outputText value="Shipped"/><br/>
+        <h:inputText class="inputText" value="#{produk.shipped}"/><br/><br/>
+        
+        <h:commandButton class="but" value="Add" action="#{produk.save()}"/><br/><br/>
+        <h:commandButton class="but" value="Edit" action="#{produk.edit()}"/><br/><br/>
+        <h:commandButton class="but" value="Delete" action="#{produk.delete()}"/><br/><br/>
+        </h:form>
+        </div>
+    </h:body>
+</html>
+
+

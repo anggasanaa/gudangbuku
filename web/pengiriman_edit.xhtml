@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Delivery Edit</title>
+    </h:head>
+     <style>
+        body {
+	margin:0;
+	padding:0;
+	background-color:whitesmoke;
+	font-family:'Tahoma';
+}
+.sidenav {
+	height:100%;
+	width:160px;
+	position:fixed;
+	z-index:1;
+	top:0;
+	left:0;
+	background-color:#554CCD;
+	overflow-x:hidden;
+	padding-top:20px;
+}
+.sidelink {
+	padding:6px 8px 6px 16px;
+	text-decoration:none;
+	font-size:25px;
+	color:plum;
+	display:block;
+}
+.sidenav a:hover {
+	color: bisque;
+}
+.main {
+	margin-top:25px;
+	margin-left:160px;
+	/* Same as the width of the sidenav */
+	font-size:15px;
+	/* Increased text to enable scrolling */
+	padding:0px 10px;
+}
+@media screen and (max-height:450px) {
+	.sidenav {
+		padding-top:15px;
+	}
+	.sidenav a {
+		font-size:18px;
+	}
+}
+.topnav {
+	margin-left:160px;
+	overflow:hidden;
+	background-color:cyan;
+}
+.topnav a {
+	float:left;
+	color:purple;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+	font-size:17px;
+}
+.topnav a:hover {
+	background-color:cyan;
+	color:#f1f1f1;
+}
+.topnav a.active {
+	background-color:cyan;
+	color:#f1f1f1;
+}
+.tables {
+        margin-left: 120px;
+	font-family:arial,sans-serif;
+	border-collapse:collapse;
+	width:80%;
+}
+.tc,.thead {
+	border:1px solid #dddddd;
+	text-align:left;
+	padding: 8px;
+}
+h2{  
+    text-align: center;  
+    color: #6A6262;  
+    padding: 20px;  
+} 
+    </style>
+    <h:body>
+         <div class="topnav">
+        <h:form>
+            <h:commandLink class="active" value="Data Pengiriman" action="#{pengiriman.home()}"/>
+        </h:form>
+        </div>
+        
+        <div class="main">
+        <h2>Pengiriman CRUD Buku</h2>
+        <h:form>
+            <h:inputText class="inputText" value="#{pengiriman.id}" a:placeholder="ID"/><br/>
+        <h:commandButton class="but" value="Search" action="#{pengiriman.getById()}"/>
+        <hr/>
+        <h:outputText value="Nama Toko"/><br/>
+        <h:inputText class="inputText" value="#{pengiriman.nama}" a:placeholder="Nama Toko"/><br/><br/>
+        <h:outputText value="Alamat"/><br/>
+        <h:inputText class="inputText" value="#{pengiriman.alamat}" a:placeholder="Alamat"/><br/><br/>
+        <h:outputText value="Kota"/><br/>
+        <h:inputText class="inputText" value="#{pengiriman.kota}" a:placeholder="Kota"/><br/><br/>
+        <h:outputText value="Provinsi"/><br/>
+        <h:inputText class="inputText" value="#{pengiriman.provinsi}" a:placeholder="Provinsi"/><br/><br/>
+        <h:outputText value="Kode Pos"/><br/>
+        <h:inputText class="inputText" value="#{pengiriman.kodePos}" a:placeholder="Kode Pos"/><br/><br/>
+        <h:outputText value="No Telpon Toko"/><br/>
+        <h:inputText class="inputText" value="#{pengiriman.noTelp}" a:placeholder="No. Telp"/><br/><br/>
+       
+       
+        
+        <h:commandButton class="but" value="Add" action="#{pengiriman.add()}"/><br/><br/>
+        <h:commandButton class="but" value="Edit" action="#{pengiriman.edit()}"/><br/><br/>
+        <h:commandButton class="but" value="Delete" action="#{pengiriman.delete()}"/><br/><br/>
+        </h:form>
+        </div>
+    </h:body>
+</html>
+
